@@ -17,7 +17,7 @@ namespace ToyScript
 
 		NativeFunction(FunctionWrapper wrapper)
 		{
-			_category = Category::Native;
+			_category = FunctionCategory::Native;
 			_nativeFunction = wrapper;
 		}
 

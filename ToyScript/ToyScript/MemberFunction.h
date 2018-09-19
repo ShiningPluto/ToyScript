@@ -3,9 +3,13 @@
 #include <ToyScript/Function.h>
 
 #include <memory>
+#include <string>
 
 namespace ToyScript
 {
+	class Function;
+	class Type;
+
 	class MemberFunction : public Function
 	{
 	public:

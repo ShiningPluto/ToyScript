@@ -1,13 +1,16 @@
 #pragma once
 
-#include "ToyScript/Type.h"
-#include "ToyScript/Runtime/Thread.h"
+// #include <ToyScript/Type.h>
 
 #include <vector>
 #include <string>
 
 namespace ToyScript
 {
+	class Type;
+	class Thread;
+	class Variable;
+
 	enum FunctionCategory
 	{
 		Native,
@@ -26,6 +29,6 @@ namespace ToyScript
 		std::string _name;
 
 	public:
-		//virtual void Invoke(Thread &thread, std::vector<Variable&>& params, std::vector<Variable&>& rets) = 0;
+		virtual void Invoke(Thread &thread, std::vector<Variable&>& params, std::vector<Variable&>& rets) = 0;
 	};
 }

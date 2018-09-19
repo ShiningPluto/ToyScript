@@ -1,4 +1,4 @@
-#include "NativeFunction.h"
+#include <ToyScript/NativeFunction.h>
 
 using namespace ToyScript;
 

@@ -6,8 +6,12 @@
 
 namespace ToyScript
 {
+	class Context;
+
 	class ModuleManager
 	{
+		static std::vector<std::unique_ptr<Module>> _baseModules;
+
 		static std::vector<Module> _modules;
 
 		// 判断一个module是否已经被当前运行时加载
@@ -22,5 +26,8 @@ namespace ToyScript
 		ModuleManager() = delete;
 
 		static Type const& FindType(std::string const& name);
+
+	public:
+		static std::vector<Module*> GetBaseModules();
 	};
 }

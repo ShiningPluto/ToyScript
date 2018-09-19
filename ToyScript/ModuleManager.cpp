@@ -42,7 +42,7 @@ Module & ModuleManager::BuildModuleFromSource()
 
 		for (auto funcDef = it->funcDefs.cbegin(); funcDef != it->funcDefs.cend(); ++funcDef)
 		{
-			Function& func = module.AddFunction(Function::Category::Script, funcDef->funcName);
+			auto func = module.AddFunction(FunctionCategory::Script, funcDef->funcName);
 
 		}
 
@@ -56,4 +56,14 @@ Module & ModuleManager::BuildModuleFromSource()
 Type const& ModuleManager::FindType(std::string const& name)
 {
 	// TODO: 在此处插入 return 语句
+}
+
+std::vector<Module*> ToyScript::ModuleManager::GetBaseModules()
+{
+	auto result = std::vector<Module*>(_baseModules.size());
+
+	for (int i = 0; i < _baseModules.size(); ++i)
+		result.push_back(_baseModules[i].get());
+
+	return std::vector<Module*>();
 }
